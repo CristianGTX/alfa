@@ -1,0 +1,104 @@
+<div class="seccion-suscriptores" ng-controller="suscriptoresCtrl as vm">
+  <header class="usuario">
+  	<h2>Gestión de ALFA</h2>
+    <div class="datos-usuario">
+      <span>Usuario</span>
+      <br />
+      <span>B040162</span>
+    </div>
+  </header>
+  <div class="menu-gestion">
+    <ul>
+      <li class="boton-administracion"><span></span>Administración</li>
+      <li class="boton-reportes"><span></span>Reportes</li>
+      <li class="boton-sucursales"><span></span>Sucursales</li>
+    </ul>
+  </div>
+  <div class="estructura-menu-contenido">
+  	<!--Menu lateral Izquierdo-->
+    <div class="contenido-menu-mascaras">
+      <div class="sidebar-izquierdo">
+    		<ul>
+    			<li ng-class="{'item-seleccionado':$index === 3}" ng-repeat="lista in vm.sidebarMenu"><a ng-href="{{lista.link}}">{{lista.titulo}}({{lista.cantidad}})</a></li>
+    		</ul>
+    	</div>
+    </div>
+  	<!--Contenido de la seccion mascaras-->
+  	<div class="contenido-mascaras">
+      <!--Panel de filtros-->
+      <div class="panel-filtros-generico">
+  	    <h2 class="titulo-seccion">Suscriptores</h2>
+  	    <div class="filtro">
+          <div class="boton-filtro" ng-click="vm.toggleFiltro()">
+            <span></span>
+            <span>Filtrar<span>
+          </div>
+        </div>
+  	  </div>
+      <!--Filtro activado -->
+      <div class="panel-filtros" ng-if="vm.filtroActivo">
+        <div class="close-filtro" ng-click="vm.toggleFiltro()"></div>
+        <div class="filtro-interno">
+          <p>Negocio</p>
+          <select>
+            <option value="">Todos</option>
+            <option value="">Preevaliacion s/ Persona</option>
+            <option value="">ANSES</option>
+          </select>
+        </div>
+        <div class="filtro-interno">
+          <p>Suscriptor</p>
+          <select>
+            <option value="">Todos</option>
+            <option value="">Activo</option>
+            <option value="">Inhabilitado</option>
+          </select>
+        </div>
+        <div class="filtro-interno">
+          <p>Estado</p>
+          <select>
+            <option value="">Todos</option>
+            <option value="">Activo</option>
+            <option value="">Inhabilitado</option>
+          </select>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <!--Tabla con el contenido de mascaras -->
+      <table class="tabla-generica datos-suscriptores">
+         <tr>
+           <th>Entidad<span></span></th>
+           <th>Negocio<span></span></th>
+           <th>Fecha Alta<span></span></th>
+           <th>Fecha Baja<span></span></th>
+           <th>Estado<span></span></th>
+         </tr>
+         <tr ng-repeat="datos in vm.tablaSuscriptores">
+           <td ng-bind="datos.entidad"></td>
+           <td ng-bind="datos.negocio"></td>
+           <td ng-bind="datos.fechaAlta"></td>
+           <td ng-bind="datos.fechaBaja"></td>
+           <td>
+             <span ng-class="{'activo' : datos.estado === 'Activo', 'inhabilitado' : datos.estado === 'Inhabilitado' }">{{datos.estado}}</span>
+             <span class="boton-tres-puntitos" ng-click="vm.abreOpciones($index)"></span>
+             <div class="menu-adicional" ng-if="vm.opcionSeleccionada === $index">
+               <ul>
+                 <li>Inhabilitar</li>
+                 <li>Duplicar</li>
+               </ul>
+             </div>
+           </td>
+         </tr>
+      </table>
+      <div class="paginador-generico">
+        <span class="pag-anterior"></span>
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span class="pag-siguiente"></span>
+      </div>
+      <div class="boton-nuevo">+ Nuevo Suscriptor</div>
+  	</div>
+  </div>
+</div>

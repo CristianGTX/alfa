@@ -1,0 +1,500 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(normalize.css);
+@import url(fonts.css);
+
+/* ===CONTENIDO=== */
+body {
+  font-family: 'open_sansregular';
+  color: #555555;
+  font-size: 12px;
+  background: #FFFFFF;
+}
+
+/* ===SCREEN 1024=== */
+body {
+  padding: 0;
+  margin:0;
+  min-width: 1024px;
+}
+
+/* ===HEADER=== */
+body > div.menu-principal {
+  display: flex;
+  background: #EC0000;
+  color: #FFFFFF;
+  padding: 10px;
+  line-height: 26px;
+}
+
+body > div.menu-principal > div.logo {
+  text-align: left;
+  width: 139px;
+  height: 20px;
+  background: url(../img/logo-santander-chico.png);
+}
+
+body > div.menu-principal > div:last-child {
+  text-align: left;
+  padding-left: 50px;
+  line-height: 26px;
+}
+
+body > div.menu-principal ul {
+  margin: 0;
+  padding: 0;
+}
+
+body > div.menu-principal ul li {
+  display: inline;
+  padding: 0;
+  margin: 0 1px;
+  cursor: default;
+}
+
+body > div.menu-principal ul li:nth-child(2n+1) {
+  cursor: pointer;
+}
+
+/* SUBMENU DE GESTIONES*/
+
+.menu-gestion {
+  background: #EBEBEB;
+  padding: 0;
+  border-bottom: solid 1px #CCCCCC;
+  margin-bottom: 40px;
+}
+
+.menu-gestion ul {
+  margin: 0;
+  padding: 0;
+  height: 50px;
+}
+
+.menu-gestion ul li {
+  float: left;
+  list-style: none;
+  line-height: 50px;
+  padding: 0 20px;
+  margin: 0;
+  font-weight: 600;
+  border-right: solid 1px #CCCCCC;
+  cursor: pointer;
+}
+
+.menu-gestion ul li:hover {
+  background-color: #6F6F6F;
+	color: #FFFFFF;
+}
+
+.menu-gestion ul li > span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  width: 19px;
+  height: 21px;
+  background-image: url(../img/sprite-2.png);
+}
+
+.menu-gestion ul .boton-administracion span{
+	background-position: 42px 0;
+}
+
+.menu-gestion ul .boton-administracion:hover > span{
+	background-position: 42px 45px;
+}
+
+.menu-gestion ul .boton-reportes span{
+	background-position: 0 0;
+}
+.menu-gestion ul .boton-reportes:hover > span{
+	background-position: 0 45px;
+}
+.menu-gestion ul .boton-sucursales span{
+	background-position: 88px 0;
+}
+.menu-gestion ul .boton-sucursales:hover > span{
+	background-position: 88px 45px;
+}
+
+/* ===MENU DE USUARIO=== */
+
+ header.usuario {
+  display: flex;
+  padding: 20px;
+  background: #EBEBEB;
+  border-bottom: solid 1px #CCCCCC;
+}
+
+header.usuario h2 {
+  text-align: left;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  line-height: 35px;
+  font-size: 20px;
+}
+
+header.usuario div.datos-usuario {
+  text-align: right;
+  width: 50%;
+  font-weight: 600;
+}
+
+header.usuario div.datos-usuario > span:first-child {
+  font-size: 10px;
+}
+
+header.usuario div.datos-usuario > span:last-child {
+  font-size: 14px;
+  color: #EC0000;
+}
+
+/* ===ESTRUCTURA MASCARAS / SUSCRIPTORES=== */
+
+.estructura-menu-contenido {
+  display: flex;
+}
+
+.estructura-menu-contenido > div{
+  padding: 20px;
+}
+
+.contenido-menu {
+  width: 200px;
+}
+
+.contenido-mascaras {
+  width: 100%;
+}
+
+/* ===SIDEBAR IZQUIERDO=== */
+
+.sidebar-izquierdo {
+  background: #FBFBFB;
+  border: solid 1px #CCCCCC;
+  border-bottom: none;
+}
+
+.sidebar-izquierdo ul {
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-izquierdo ul li {
+  margin: 0;
+  border-bottom: solid 1px #CCCCCC;
+  color: #777777;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.sidebar-izquierdo ul li > a {
+  padding: 10px;
+  width: 178px;
+  display: inline-block;
+  color: #777777;
+}
+
+.sidebar-izquierdo ul li:hover, .item-seleccionado {
+  background: #EBEBEB;
+  color: #333333;
+}
+
+/* ===CONTENIDO DE FILTROS=== */
+
+.panel-filtros-generico {
+  display: flex;
+  line-height: 30px;
+  height: 30px;
+}
+
+h2.titulo-seccion {
+  text-align: left;
+  width: 50%;
+  color: #EC0000;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.filtro {
+  width: 50%;
+  text-align: right;
+}
+
+.boton-filtro {
+  cursor: pointer;
+  float: right;
+  line-height: 16px;
+}
+
+.close-filtro {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/sprite.png);
+  background-position: -35px 0px;
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.filtro > .boton-filtro > span:first-child {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/sprite.png);
+  background-position: 0px -70px;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+/* === FILTROS === */
+
+.panel-filtros {
+  background: #EBEBEB;
+  margin-bottom: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.panel-filtros:before {
+  content: "";
+  border: solid #ebebeb;
+  background: #EBEBEB;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 10px;
+  top: -5px;
+  position: absolute;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  right: 20px;
+}
+
+.panel-filtros p {
+  font-size: 14px;
+  /*font-weight: 600;*/
+  margin-bottom: 10px;
+}
+
+.panel-filtros select {
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.panel-filtros .filtro-interno {
+  float: left;
+  margin-right: 20px;
+}
+
+.clear {
+  clear: both;
+}
+/*=== TABLAS GENERALES === */
+
+.tabla-generica {
+  width: 100%;
+  border: solid 1px #CCCCCC;
+}
+
+.tabla-generica tr:hover {
+  background: #EBEBEB;
+}
+
+.tabla-generica th {
+  background: #EEEEEE;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 600;
+  border-left: solid 1px #CCCCCC;
+}
+
+.tabla-generica th > span {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/sprite-2.png);
+  background-position: 25px 20px;
+  width: 12px;
+  height: 12px;
+  margin-left: 6px;
+  cursor: pointer;
+}
+
+.tabla-generica td {
+  border: solid 1px #CCCCCC;
+  text-align: left;
+  line-height: 30px;
+  padding: 5px;
+}
+
+.tabla-generica .activo {
+  color: #2BC56C;
+  font-weight: 600;
+}
+
+.tabla-generica .inhabilitado {
+  color: #EC0000;
+  font-weight: 600;
+}
+
+/* AJUSTES PARA TABLA DE MASCARA */
+.tabla-generica.datos-mascara td:nth-child(2), td:nth-child(6), td:nth-child(7) {
+  text-align: right;
+}
+
+/* AJUSTES PARA TABLA DE SUSCRIPTORES */
+.tabla-generica.datos-suscriptores td:nth-child(3), td:nth-child(4) {
+  text-align: right;
+}
+
+.tabla-generica td:last-child {
+  position: relative;
+}
+
+.tabla-generica td:last-child > .boton-tres-puntitos {
+  position: absolute;
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/sprite-2.png);
+  background-position: 40px 20px;
+  width: 10px;
+  height: 20px;
+  right: 4px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+/* ===Paginador=== */
+
+.paginador-generico {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.paginador-generico span {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: solid 1px #CCCCCC;
+  line-height: 20px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.paginador-generico span:hover {
+  background: #EBEBEB;
+  font-weight: 600;
+}
+
+.paginador-generico span.pag-anterior {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/sprite-2.png);
+  background-position: 70px 20px;
+  width: 10px;
+  margin-right: 10px;
+  border: none;
+}
+
+.paginador-generico span.pag-siguiente {
+  display: inline-block;
+  vertical-align: middle;
+  background-image: url(../img/sprite-2.png);
+  background-position: 58px 20px;
+  width: 10px;
+  margin-left: 10px;
+  border: none;
+}
+
+.paginador-generico span.pag-anterior:hover {
+  background: none;
+  background-image: url(../img/sprite-2.png);
+  background-position: 70px 20px;
+}
+
+.paginador-generico span.pag-siguiente:hover {
+  background: none;
+  background-image: url(../img/sprite-2.png);
+  background-position: 58px 20px;
+}
+
+/* ===Menu Adicional=== */
+
+.menu-adicional {
+  position: absolute;
+  top: 44px;
+  text-align: right;
+  border-radius: 5px;
+  right: -13px;
+  background: #FFFFFF;
+  border: solid 1px #CCCCCC;
+  padding: 10px 0;
+  z-index: 5;
+}
+
+.menu-adicional:before {
+  content: "";
+  border: solid #CCCCCC;
+  background: #FFFFFF;
+  border-width: 0 1px 1px 0;
+  display: inline-block;
+  padding: 8px;
+  top: -9px;
+  position: absolute;
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  right: 14px;
+  z-index: -1;
+}
+
+.menu-adicional ul{
+  margin: 0;
+  padding: 0;
+}
+
+.menu-adicional ul li{
+  cursor: pointer;
+  width: 140px;
+  text-align: left;
+  padding: 0 5px;
+}
+
+.menu-adicional ul li:hover{
+  background: #EEEEEE;
+}
+
+
+/*=== NUEVA MASCARA ===*/
+
+.seccion-nuevaMascara header{
+  padding: 20px;
+  background: #EBEBEB;
+  border-bottom: solid 1px #CCCCCC;
+}
+
+
+/* ===Botón nuevo=== */
+
+.boton-nuevo {
+  float: right;
+  margin-top: 20px;
+  background: #EC0000;
+  background: url(../img/bg_btn_01.png);
+  color: #FFFFFF;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.boton-nuevo:hover {
+  opacity: 0.85;
+}
